@@ -15,8 +15,7 @@ def prepare_data(training_data, new_data):
 	minmax_features = ['PCR_01','PCR_03','PCR_04','PCR_06','PCR_07','PCR_08', 'PCR_09']
 
 	minmax_scaler.fit(training_data[minmax_features])
-	prepared_data[minmax_features] = 
-		minmax_scaler.transform(new_data[minmax_features])
+	prepared_data[minmax_features] = minmax_scaler.transform(new_data[minmax_features])
 
 	# scale using standard
 
@@ -24,8 +23,7 @@ def prepare_data(training_data, new_data):
 	standard_features = ['PCR_02','PCR_05','PCR_10']
 	
 	standard_scaler.fit(training_data[standard_features])
-	prepared_data[standard_features] = 
-		standard_scaler.transform(new_data[standard_features])
+	prepared_data[standard_features] = standard_scaler.transform(new_data[standard_features])
 
 	# generate new feature `blood_type_group`
 
